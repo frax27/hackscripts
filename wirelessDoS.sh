@@ -10,7 +10,7 @@ sudo airmon-ng check kill
 
 # identify the enemy's BSSID and copy it!
 
-airodump-ng wlan0mon
+sudo airodump-ng wlan0mon
 
 # set the BSSID you wish to target
 

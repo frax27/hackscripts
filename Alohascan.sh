@@ -1,5 +1,6 @@
 #! /bin/bash
-# This script is designed to find systems with a certain port open
+# This script is designed to find systems with a certain port open.
+# This is the exact script from Chapter 8 of Linux Basics for Hackers by OccupyTheWeb
 echo "Enter the starting IP address to scan... :"
 read FIRSTIP
 echo "Enter the last octet of the last IP :"

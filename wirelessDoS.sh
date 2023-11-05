@@ -3,7 +3,7 @@
 # This is continous Dos a wireless AP
 # Based on this article from Hackers-Arise
 # https://www.hackers-arise.com/post/bash-scripting-for-hackers-part-2-building-a-continuous-wi-fi-denial-of-service-tool
-# Some APs will not allow this, and you will have to rewrite this script with the individual MAC addresses you want to de-authenticate.
+# Some APs will not allow this, and you will have to rerun this script with the individual MAC addresses you want to de-authenticate.
 
 # Closes any process that could cause trouble once the wireless adapter is in monitor mode
 sudo airmon-ng check kill

@@ -1,5 +1,5 @@
 #! /bin/bash
-
+# FOR EDUCATIONAL PURPOSES ONLY
 # This is continous Dos a wireless AP
 # Based on this article from Hackers-Arise
 # https://www.hackers-arise.com/post/bash-scripting-for-hackers-part-2-building-a-continuous-wi-fi-denial-of-service-tool

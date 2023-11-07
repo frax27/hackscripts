@@ -31,11 +31,8 @@ echo "Select a BSSID from the list:"
 select bssid in "${bssids[@]}"
 do
   echo "You selected $bssid"
+  bssids+=("$bssid")
 done
-
-# Reconfigures the bssid array to just the selected bssid
-
-bssids+=("$bssid")
 
 # Sets how many deauth frame will be send in each attack in the loop
 

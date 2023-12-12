@@ -1,4 +1,5 @@
 #! /bin/bash
+# Created By: Hacker 27
 # FOR EDUCATIONAL PURPOSES ONLY
 # This is continous Dos a wireless AP
 # Based on this article from Hackers-Arise
